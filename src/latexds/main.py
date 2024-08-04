@@ -80,7 +80,11 @@ class Bot(commands.Bot):
 
 def main() -> None:
     bot = Bot()
-    if (token := os.getenv("LATEXDS_TOKEN")) is None:
-        print(f"{sys.argv[0]}: LATEXDS_TOKEN is not set", file=sys.stderr)
-    else:
+    if (token := os.getenv("LATEXDS_TOKEN")) is not None:
         bot.run(token)
+    elif (token_path := os.getenv("LATEXDS_TOKEN_FILE")) is not None:
+        with open(token_path) as f:
+            token = f.read()
+        bot.run(token)
+    else:
+        print(f"{sys.argv[0]}: Neither LATEXDS_TOKEN nor LATEXDS_TOKEN_FILE are set", file=sys.stderr)

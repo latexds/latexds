@@ -1,0 +1,11 @@
+services:
+  latexds:
+    image: nakidai/latexds:latest
+    secrets:
+      - latexds-token
+    environment:
+      LATEXDS_TOKEN_FILE: "/run/secrets/latexds-token"
+
+secrets:
+  latexds-token:
+    external: true
