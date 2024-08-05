@@ -1,6 +1,6 @@
 services:
   latexds:
-    image: nakidai/latexds:latest
+    image: ghcr.io/latexds/latexds:latest
     secrets:
       - latexds-token
     environment:
