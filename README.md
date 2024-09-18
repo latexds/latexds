@@ -7,7 +7,7 @@ This is user-installable Discord application that adds command for rendering LaT
 ----------
 
 # Install already existing instance
-[Click there](https://latexds.nakidai.ru)
+[Click there](https://latexds.pwn3t.ru)
 
 # Run your own instance
 Since this bot is open source you can selfhost it. I would say that this way is preferable since I use slow host.
@@ -16,5 +16,5 @@ Since this bot is open source you can selfhost it. I would say that this way is 
 - Run `latexds`  
 ## With docker
 - Create secret named `latexds-token` with your token  
-- Download `nakidai/latexds:latest`  
+- Download `ghcr.io/latexds/latexds:latest`  
 - Run `docker stack deploy -c compose.yml latexds`  
